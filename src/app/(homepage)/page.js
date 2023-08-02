@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Addcard } from "@/components/ui/addcard";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
+import Topbar from "@/components/pageComponents/Topbar/Topbar";
 
 const Homepage = () => {
   const [productList, setproductList] = useState([]);
@@ -32,7 +33,6 @@ const Homepage = () => {
     <div>
       <h1>cards</h1>
       <div>
-        {/* <Addcard props={item}></Addcard> */}
         {productList.map((item) => {
           return <Addcard props={item}></Addcard>;
         })}

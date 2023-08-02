@@ -1,0 +1,16 @@
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .on {
+    color: #33f316;
+  }
+  .off {
+    color: #ccc;
+  }
+  .star{
+    font-size: x-large;
+    border-radius: "20%";
+  }

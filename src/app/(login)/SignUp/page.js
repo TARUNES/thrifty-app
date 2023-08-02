@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../../firebase";
 import { useRouter } from "next/navigation";
+import "./login.css";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -31,25 +32,31 @@ const SignUp = () => {
 
   return (
     <div>
-      <form>
-        <div>
+      <div className="login">
+        <span className="loginTitle">Login</span>
+        <form className="loginForm">
+          <label>Email</label>
           <input
+            className="loginInput"
             type="text"
+            placeholder="Enter your email..."
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-          ></input>
-        </div>
-        <div>
+          />
+          <label>Password</label>
           <input
+            className="loginInput"
             type="password"
+            placeholder="Enter your password..."
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-          ></input>
-        </div>
-        <button onClick={handleSubmit}>Submit</button>
-      </form>
+          />
+          <button onClick={handleSubmit} className="loginButton">
+            Login
+          </button>
+        </form>
+        <button className="loginRegisterButton">Register</button>
+      </div>
     </div>
   );
 };
