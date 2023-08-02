@@ -1,13 +1,12 @@
 import React from "react";
 import "./Topbar.css";
-import logo from "./images/thrifty-logo.png";
 import Link from "next/link";
 
 export default function Topbar() {
   return (
     <div className="top">
       <div className="topLeft">
-        <img src={logo} alt="" className="logo" />
+        <img src="./thrifty-logo.png" alt="Thrifty" className="logo" />
       </div>
       <div className="topCenter">
         <ul className="topList">
