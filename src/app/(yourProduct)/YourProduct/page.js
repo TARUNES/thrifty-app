@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Addcard } from "@/components/ui/addcard";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../firebase";
+import { db } from "../../../../firebase";
 import Topbar from "@/components/pageComponents/Topbar/Topbar";
 import { Adddelcard } from "@/components/ui/addcarddel";
 
