@@ -1,9 +1,15 @@
+import { async } from "@firebase/util";
 import Link from "next/link";
 import React from "react";
 import { Button } from "./button";
+import { db } from "../../../firebase";
+import { doc, deleteDoc } from "firebase/firestore";
 import "./addcard.css";
 
-export const Addcard = ({ props }) => {
+export const Adddelcard = ({ props }) => {
+  const del = async () => {
+    await deleteDoc(doc(db, "products", props.id));
+  };
   return (
     <Link href={"/products/" + props.id}>
       <div class="product-card">
@@ -21,6 +27,7 @@ export const Addcard = ({ props }) => {
           </div>
         </div>
       </div>
+      <Button onClick={del}></Button>
     </Link>
   );
 };

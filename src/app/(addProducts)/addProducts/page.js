@@ -1,10 +1,12 @@
 "use client";
+import "./addProduct.css";
 
 import React, { useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 import { storage, auth, db } from "../../../../firebase";
 import { addDoc, collection, getDocs } from "firebase/firestore";
+import { Button } from "@/components/ui/button";
 
 const AddProducts = () => {
   const [ProductName, setProductName] = useState("");
@@ -76,7 +78,7 @@ const AddProducts = () => {
             setProductName("");
             setProductPrice("");
             setDescription("");
-            setFile(null);
+            // setFile(null);
           } catch (e) {
             window.alert(
               "SomeThing Got Wrong if your not signed in athae panra mothe"
@@ -88,47 +90,173 @@ const AddProducts = () => {
   };
 
   return (
-    <div>
-      <h1>Add Products</h1>
-      <form>
-        <div>
-          <input
-            type="text"
-            value={ProductName}
-            onChange={(e) => setProductName(e.target.value)}
-            placeholder="ProductName"
-          ></input>
-        </div>
-        <div>
-          <input
-            type="number"
-            value={ProductPrice}
-            onChange={(e) => setProductPrice(e.target.value)}
-            placeholder="ProductPrice"
-          ></input>
-        </div>
-        <div>
-          <input
-            type="text"
-            value={Description}
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder="Describe Your Product"
-            rows={5}
-          ></input>
-        </div>
-        <div>
-          <input
-            type="file"
-            defaultValue={""}
-            onChange={(e) => {
-              setFile(e.target.files[0]);
-              console.log(File);
-            }}
-            placeholder="Upload Image"
-          ></input>
-        </div>
-        <button onClick={handleSubmit}>Submit</button>
-      </form>
+    // <div>
+    //   <h1>Add Products</h1>
+    //   <form>
+    //     <div>
+    //       <input
+    //         type="text"
+    // value={ProductName}
+    // onChange={(e) => setProductName(e.target.value)}
+    //         placeholder="ProductName"
+    //       ></input>
+    //     </div>
+    //     <div>
+    //       <input
+    //         type="number"
+    // value={ProductPrice}
+    // onChange={(e) => setProductPrice(e.target.value)}
+    //         placeholder="ProductPrice"
+    //       ></input>
+    //     </div>
+    //     <div>
+    //       <input
+    //         type="text"
+    // value={Description}
+    // onChange={(e) => setDescription(e.target.value)}
+    //         placeholder="Describe Your Product"
+    //         rows={5}
+    //       ></input>
+    //     </div>
+    //     <div>
+    //       <input
+    // type="file"
+    // defaultValue={""}
+    // onChange={(e) => {
+    //   setFile(e.target.files[0]);
+    //   console.log(File);
+    // }}
+    //         placeholder="Upload Image"
+    //       ></input>
+    //     </div>
+    //     <button   <Button>Add</Button>onClick={handleSubmit}>Submit</button>
+    //   </form>
+    // </div>
+    <div class="body1">
+      <div class="container">
+        <div class="text">Add Your Product</div>
+
+        <form action="#">
+          <div class="form-row">
+            <div class="input-data">
+              <input
+                type="text"
+                value={ProductName}
+                onChange={(e) => setProductName(e.target.value)}
+                required
+              ></input>
+              <div class="underline"></div>
+              <label for="">Product Name</label>
+            </div>
+            <div class="input-data">
+              <input
+                type="number"
+                value={ProductPrice}
+                onChange={(e) => setProductPrice(e.target.value)}
+                required
+              ></input>
+              <div class="underline"></div>
+              <label for="">Product Price</label>
+            </div>
+          </div>
+          {/* <div class="flex items-center justify-center w-full">
+            <label
+              for="dropzone-file"
+              class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+            >
+              <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <svg
+                  class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 16"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    z
+                    stroke-width="2"
+                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                  />
+                </svg>
+                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                  <span class="font-semibold">Click to upload</span> or drag and
+                  drop
+                </p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                  SVG, PNG, JPG or GIF (MAX. 800x400px)
+                </p>
+              </div>
+              <input
+                id="dropzone-file"
+                type="file"
+                class="hidden"
+                defaultValue={""}
+                onChange={(e) => {
+                  setFile(e.target.files[0]);
+                  console.log(File);
+                }}
+              />
+            </label>
+          </div>{" "} */}
+          <label for="images" class="drop-container" id="dropcontainer">
+            <span class="drop-title">Drop Product image here</span>
+            or
+            <input
+              type="file"
+              id="images"
+              accept="image/*"
+              defaultValue={""}
+              onChange={(e) => {
+                setFile(e.target.files[0]);
+                console.log(File);
+              }}
+              required
+            />
+          </label>
+
+          {/* <div class="form-row">
+            <div class="input-data">
+              <input type="text" required></input>
+              <div class="underline"></div>
+              <label for="">Email Address</label>
+            </div>
+            <div class="input-data">
+              <input type="text" required></input>
+              <div class="underline"></div>
+              <label for="">Website Name</label>
+            </div>
+          </div> */}
+          <div class="form-row">
+            <div class="input-data textarea">
+              <textarea
+                rows="8"
+                cols="80"
+                value={Description}
+                onChange={(e) => setDescription(e.target.value)}
+                required
+              ></textarea>
+              <br />
+              <div class="underline"></div>
+              <label for="">Description</label>
+              <br />
+              {/* <div class="form-row submit-btn">
+                <div class="input-data">
+                  <div class="inner"></div>
+                  <input type="submit" value="submit"></input>
+                </div>
+              </div> */}
+            </div>
+          </div>
+          <div class="addbtn">
+            {/* <button onClick={handleSubmit}> */}
+            <Button onClick={handleSubmit}>Add</Button>
+            {/* </button> */}
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
