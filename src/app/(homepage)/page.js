@@ -5,6 +5,7 @@ import { Addcard } from "@/components/ui/addcard";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
 import Topbar from "@/components/pageComponents/Topbar/Topbar";
+import Slider from "./Slider";
 
 const Homepage = () => {
   const [productList, setproductList] = useState([]);
@@ -31,7 +32,7 @@ const Homepage = () => {
 
   return (
     <div>
-      <h1>cards</h1>
+      <Slider/>
       <div>
         {productList.map((item) => {
           return <Addcard props={item}></Addcard>;
