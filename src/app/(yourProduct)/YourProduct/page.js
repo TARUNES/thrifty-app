@@ -33,7 +33,7 @@ const YourProduct = () => {
   return (
     <div>
       <h1>cards</h1>
-      <div>
+      <div style={{display:'flex',flexWrap:'wrap',justifyContent:'space-between',}}>
         {productList.map((item) => {
           return <Adddelcard props={item}></Adddelcard>;
         })}

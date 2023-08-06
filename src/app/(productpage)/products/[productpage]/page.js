@@ -31,7 +31,8 @@ const InfoContainer = styled.div`
   padding: 0px 50px;
 `;
 const Title = styled.h1`
-  font-family: "Roboto Mono", monospace;
+  font-weight:600;
+  font-size:40px;
 `;
 const Desc = styled.p`
   font-family: "Nunito Sans", sans-serif;
@@ -41,6 +42,7 @@ const Price = styled.h2`
   padding-top: 30px;
   font-family: "Roboto", sans-serif;
   fontweight: 20px;
+  margin-bottom:10px;
 `;
 const Payment = styled.p`
   padding-bottom: 30px;
