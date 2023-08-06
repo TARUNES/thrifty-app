@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { sliderItrms } from "./data"
 import { useState } from "react"
+import Image from "next/image"
 
 
 const Container=styled.div`
@@ -51,9 +52,9 @@ const InfoContainer=styled.div`
 flex:1;
 
 `
-const Image=styled.img`
-height:80%;
-`
+// const Image=styled.img`
+// height:80%;
+// `
 const Title=styled.h1`
 font-size:50px;
 `
@@ -90,7 +91,8 @@ export default function Slider() {
 
           <Slide bg={item.bg}>
       <ImgContainer>
-      <Image src={item.img}/>
+      <Image src={item.img} width={500}
+      height={500}/>
       </ImgContainer>
       <InfoContainer>
         <Title>{item.title}</Title>
