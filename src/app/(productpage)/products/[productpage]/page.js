@@ -5,6 +5,8 @@ import { db } from "../../../../../firebase";
 import styled from "styled-components";
 // import image2 from '../components/images/airpods-max.png'
 import StarRating from "./StarRating";
+import { useDispatch } from "react-redux";
+import { add } from "@/redux/cartSlice";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -129,6 +131,11 @@ const Use = styled.div`
 `;
 
 const ProductPage = ({ params }) => {
+  const dispatch = useDispatch();
+  const handleadd = (productData) => {
+    // console.log(productData);
+    dispatch(add(productData));
+  };
   const [count, setCount] = useState(1);
   const [ProductName, setProductName] = useState("");
   const [ProductPrice, setProductPrice] = useState("");
@@ -147,6 +154,7 @@ const ProductPage = ({ params }) => {
     const getProduct = async () => {
       const product = await getDoc(doc(db, "products", params.productpage));
       const data = product.data();
+      window.globalVariable = data;
       setProductName(data.ProductName);
       setProductPrice(data.ProductPrice);
       setDescription(data.Description);
@@ -200,7 +208,9 @@ const ProductPage = ({ params }) => {
           </AddContainer>
           <ButtonContainer>
             <Button direction="right">Buy Now</Button>
-            <Button direction="left">Add To Cart</Button>
+            <Button direction="left" onClick={() => handleadd(globalVariable)}>
+              Add To Cart
+            </Button>
           </ButtonContainer>
         </InfoContainer>
       </Wrapper>
