@@ -32,8 +32,14 @@ const Homepage = () => {
 
   return (
     <div>
-      <Slider/>
-      <div>
+      <Slider />
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+        }}
+      >
         {productList.map((item) => {
           return <Addcard props={item}></Addcard>;
         })}
