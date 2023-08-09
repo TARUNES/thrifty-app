@@ -132,41 +132,41 @@ const AddProducts = () => {
     //     <button   <Button>Add</Button>onClick={handleSubmit}>Submit</button>
     //   </form>
     // </div>
-    <div class="body1">
-      <div class="container">
-        <div class="text">Add Your Product</div>
+    <div className="body1">
+      <div className="container">
+        <div className="text">Add Your Product</div>
 
         <form action="#">
-          <div class="form-row">
-            <div class="input-data">
+          <div className="form-row">
+            <div className="input-data">
               <input
                 type="text"
                 value={ProductName}
                 onChange={(e) => setProductName(e.target.value)}
                 required
               ></input>
-              <div class="underline"></div>
+              <div className="underline"></div>
               <label for="">Product Name</label>
             </div>
-            <div class="input-data">
+            <div className="input-data">
               <input
                 type="number"
                 value={ProductPrice}
                 onChange={(e) => setProductPrice(e.target.value)}
                 required
               ></input>
-              <div class="underline"></div>
+              <div className="underline"></div>
               <label for="">Product Price</label>
             </div>
           </div>
-          {/* <div class="flex items-center justify-center w-full">
+          {/* <div className="flex items-center justify-center w-full">
             <label
               for="dropzone-file"
-              class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+              className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
             >
-              <div class="flex flex-col items-center justify-center pt-5 pb-6">
+              <div className="flex flex-col items-center justify-center pt-5 pb-6">
                 <svg
-                  class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
+                  className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -181,18 +181,18 @@ const AddProducts = () => {
                     d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
                   />
                 </svg>
-                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                  <span class="font-semibold">Click to upload</span> or drag and
+                <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                  <span className="font-semibold">Click to upload</span> or drag and
                   drop
                 </p>
-                <p class="text-xs text-gray-500 dark:text-gray-400">
+                <p className="text-xs text-gray-500 dark:text-gray-400">
                   SVG, PNG, JPG or GIF (MAX. 800x400px)
                 </p>
               </div>
               <input
                 id="dropzone-file"
                 type="file"
-                class="hidden"
+                className="hidden"
                 defaultValue={""}
                 onChange={(e) => {
                   setFile(e.target.files[0]);
@@ -201,8 +201,8 @@ const AddProducts = () => {
               />
             </label>
           </div>{" "} */}
-          <label for="images" class="drop-container" id="dropcontainer">
-            <span class="drop-title">Drop Product image here</span>
+          <label for="images" className="drop-container" id="dropcontainer">
+            <span className="drop-title">Drop Product image here</span>
             or
             <input
               type="file"
@@ -217,20 +217,20 @@ const AddProducts = () => {
             />
           </label>
 
-          {/* <div class="form-row">
-            <div class="input-data">
+          {/* <div className="form-row">
+            <div className="input-data">
               <input type="text" required></input>
-              <div class="underline"></div>
+              <div className="underline"></div>
               <label for="">Email Address</label>
             </div>
-            <div class="input-data">
+            <div className="input-data">
               <input type="text" required></input>
-              <div class="underline"></div>
+              <div className="underline"></div>
               <label for="">Website Name</label>
             </div>
           </div> */}
-          <div class="form-row">
-            <div class="input-data textarea">
+          <div className="form-row">
+            <div className="input-data textarea">
               <textarea
                 rows="8"
                 cols="80"
@@ -239,18 +239,18 @@ const AddProducts = () => {
                 required
               ></textarea>
               <br />
-              <div class="underline"></div>
+              <div className="underline"></div>
               <label for="">Description</label>
               <br />
-              {/* <div class="form-row submit-btn">
-                <div class="input-data">
-                  <div class="inner"></div>
+              {/* <div className="form-row submit-btn">
+                <div className="input-data">
+                  <div className="inner"></div>
                   <input type="submit" value="submit"></input>
                 </div>
               </div> */}
             </div>
           </div>
-          <div class="addbtn">
+          <div className="addbtn">
             {/* <button onClick={handleSubmit}> */}
             <Button onClick={handleSubmit}>Add</Button>
             {/* </button> */}
