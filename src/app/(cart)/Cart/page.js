@@ -20,11 +20,15 @@ margin-bottom
 const Cart = () => {
   const dispatch = useDispatch();
   const cartitems = useSelector((state) => state.cart);
-  console.log(cartitems);
+  //   console.log(cartitems);
 
   const del = (id) => {
     dispatch(remove(id));
   };
+  const cartprice = cartitems.reduce(
+    (total, item) => total + parseFloat(item.ProductPrice),
+    0
+  );
 
   return (
     <div>
@@ -38,7 +42,7 @@ const Cart = () => {
               {/* <span class="product-catagory">Women,bag</span> */}
               <h4>
                 <a href="">{item.ProductName}</a>
-                <Button onClick={del}>
+                <Button onClick={() => del(item.id)}>
                   <i
                     style={{ color: "red", fontsize: 20 }}
                     class="delete fa-solid fa-trash"
@@ -53,6 +57,7 @@ const Cart = () => {
           </div>
         </Link>
       ))}
+      <h2>Total Cart Price: $ {cartprice.toFixed(2)}</h2>
     </div>
   );
 };
