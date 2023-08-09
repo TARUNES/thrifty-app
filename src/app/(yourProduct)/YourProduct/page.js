@@ -1,5 +1,5 @@
 "use client";
-
+import "../../Animation.css"
 import React, { useEffect, useState } from "react";
 import { Addcard } from "@/components/ui/addcard";
 import { collection, getDocs } from "firebase/firestore";
@@ -33,7 +33,7 @@ const YourProduct = () => {
   return (
     <div>
       <h1>cards</h1>
-      <div style={{display:'flex',flexWrap:'wrap',justifyContent:'space-between',}}>
+      <div className="myproducts" style={{}}>
         {productList.map((item) => {
           return <Adddelcard props={item}></Adddelcard>;
         })}

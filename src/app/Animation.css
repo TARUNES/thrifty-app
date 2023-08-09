@@ -1,0 +1,38 @@
+.myproducts{
+    display:flex;
+    flex-wrap:wrap;
+    margin-left:150px;
+    animation: slidein 1s ease 0.2s;
+   
+}
+.product-card {
+    width: 280px;
+    box-shadow: 0 2px 7px #dfdfdf;
+    margin: 50px;
+    background: #fafafa;
+    animation:shimmer 1s linear;
+    background-size: 400%;
+    background-image: linear-gradient(to right,#f2f2f2 0%,#f2f2f2 30%,#d9d9d9 45%,#d9d9d9 50%,#f2f2f2 60%,#f2f2f2 100%);
+    
+  }
+
+@keyframes slidein {
+    from{
+        transform:translateX(-400px)
+    }
+
+    to{
+        transform:translateX(0)
+    }
+    
+}
+@keyframes shimmer {
+    from{
+        background-position: 100%;
+    }
+
+    to{
+        background-position: 0%;
+    }
+    
+}

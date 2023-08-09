@@ -5,7 +5,7 @@ import Image from "next/image"
 
 
 const Container=styled.div`
-  height: 100vh;
+  height: 60vh;
   width: 100%;
   display:flex;
   postition:relative;
@@ -38,7 +38,7 @@ transform: translateX(${props=>props.slideIndex*-100}vw);
 `
 const Slide=styled.div`
 width: 100vw;
-height: 100vh;
+height: 60vh;
 display:flex;
 align-items:center;
 background-color:${props=>props.bg};

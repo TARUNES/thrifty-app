@@ -19,6 +19,8 @@ align-items:center;
 justify-content:center;
 cursor:pointer;
 transition:all 0.5s ease;
+animation:slidein 1s ease 0.2s;
+
 `
 
 const Container=styled.div`

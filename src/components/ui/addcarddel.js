@@ -5,6 +5,7 @@ import React from "react";
 import { db } from "../../../firebase";
 import { doc, deleteDoc } from "firebase/firestore";
 import "./addcard.css";
+import "../../app/Animation.css"
 
 const Button=styled.div`
 // border:1px solid red;
@@ -14,6 +15,7 @@ const Button=styled.div`
 position:absolute;
 padding-left:230px;
 margin-bottom
+
 `
 
 
@@ -32,7 +34,7 @@ export const Adddelcard = ({ props }) => {
           {/* <span class="product-catagory">Women,bag</span> */}
           <h4>
             <a href="">{props.ProductName}</a>
-            <Button onClick={del}><i style={{color:"red",fontsize:20,}} class="fa-solid fa-trash"></i></Button>
+            <Button onClick={del}><i style={{color:"red",fontsize:20,}} class="delete fa-solid fa-trash"></i></Button>
           </h4>
           <p>{props.Description}</p>
           <div class="product-bottom-details">

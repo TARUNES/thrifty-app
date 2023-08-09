@@ -108,6 +108,7 @@ const Button = styled.button`
   width: 30%;
   margin-left: ${(props) => props.direction === "left" && "10px"};
   color: teal;
+  transition:background-color 0.5s;
   &:hover {
     background-color: teal;
     color: white;
