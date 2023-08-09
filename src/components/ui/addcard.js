@@ -3,10 +3,12 @@ import styled from "styled-components";
 import React from "react";
 import { Button } from "./button";
 import "./addcard.css";
+import { useDispatch } from "react-redux";
+import { add } from "@/redux/cartSlice";
 
 const Info = styled.div`
   opacity: 0;
-  width: 280px;
+  width: 280px
   height: 112%;
   position: absolute;
   display: flex;
@@ -63,6 +65,11 @@ const Icon = styled.div`
 `;
 
 export const Addcard = ({ props }) => {
+  const dispatch = useDispatch();
+  const handleadd = (product) => {
+    dispatch(add(product));
+  };
+
   return (
     <Link href={"/products/" + props.id}>
       <Container>
@@ -83,9 +90,11 @@ export const Addcard = ({ props }) => {
           </div>
         </div>
         <Info>
-          <Icon>
-            <i class="fa-solid fa-cart-shopping"></i>
-          </Icon>
+          <button onClick={() => handleadd(props)}>
+            <Icon>
+              <i class="fa-solid fa-cart-shopping"></i>
+            </Icon>
+          </button>
           <Icon>
             <i class="fa-regular fa-heart"></i>
           </Icon>

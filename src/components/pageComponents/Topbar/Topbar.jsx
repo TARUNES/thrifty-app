@@ -25,7 +25,7 @@ export default function Topbar() {
             <Link href="/addProducts">SELL</Link>
           </li>
           <li className="topListItem">
-            <Link href="/">CONTACT</Link>
+            <Link href="/Cart">CART</Link>
           </li>
           <li className="topListItem">
             <Link href="/YourProduct">MY PRODUCTS</Link>

@@ -7,8 +7,10 @@ import { db } from "../../../firebase";
 import Topbar from "@/components/pageComponents/Topbar/Topbar";
 import Slider from "./Slider";
 import "../Animation.css";
+import { useSelector } from "react-redux";
 
 const Homepage = () => {
+  const item = useSelector((state) => state.cart);
   const [productList, setproductList] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,6 +35,7 @@ const Homepage = () => {
 
   return (
     <div>
+      <h1>items:{item.length}</h1>
       <Slider />
       <div className="myproducts">
         {productList.map((item) => {
