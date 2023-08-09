@@ -6,6 +6,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
 import Topbar from "@/components/pageComponents/Topbar/Topbar";
 import Slider from "./Slider";
+import "../Animation.css";
 
 const Homepage = () => {
   const [productList, setproductList] = useState([]);

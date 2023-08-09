@@ -15,6 +15,26 @@ body {
   box-shadow: 0 2px 7px #dfdfdf;
   margin: 50px;
   background: #fafafa;
+  animation: shimmer 1s linear;
+  background-size: 400%;
+  background-image: linear-gradient(
+    to right,
+    #f2f2f2 0%,
+    #f2f2f2 30%,
+    #d9d9d9 45%,
+    #d9d9d9 50%,
+    #f2f2f2 60%,
+    #f2f2f2 100%
+  );
+}
+@keyframes slidein {
+  from {
+    transform: translateX(-400px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .badge {
@@ -28,6 +48,11 @@ body {
   color: #fff;
   padding: 3px 10px;
 }
+p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .product-tumb {
   display: flex;
@@ -36,10 +61,34 @@ body {
   height: 250px;
   padding: 40px;
   background: #f0f0f0;
+  animation: shimmer 1s linear;
+  background-size: 400%;
+  background-image: linear-gradient(
+    to right,
+    #f2f2f2 0%,
+    #f2f2f2 30%,
+    #d9d9d9 45%,
+    #d9d9d9 50%,
+    #f2f2f2 60%,
+    #f2f2f2 100%
+  );
 }
 
 .product-tumb img {
   object-fit: fill;
+  transition: transform 0.4s;
+}
+@keyframes shimmer {
+  from {
+    background-position: 100%;
+  }
+
+  to {
+    background-position: 0%;
+  }
+}
+.product-tumb img:hover {
+  transform: scale(1.2);
 }
 
 .product-details {
@@ -90,4 +139,10 @@ body {
   text-decoration: line-through;
   display: inline-block;
   margin-right: 5px;
+}
+.delete {
+  transition: transform 0.4s;
+}
+.delete:hover {
+  transform: translateY(-10px);
 }
