@@ -22,7 +22,8 @@ const Cart = () => {
   const cartitems = useSelector((state) => state.cart);
   //   console.log(cartitems);
 
-  const del = (id) => {
+  const del = (id, e) => {
+    e.preventDefault();
     dispatch(remove(id));
   };
   const cartprice = cartitems.reduce(
@@ -42,7 +43,7 @@ const Cart = () => {
               {/* <span class="product-catagory">Women,bag</span> */}
               <h4>
                 <a href="">{item.ProductName}</a>
-                <Button onClick={() => del(item.id)}>
+                <Button onClick={(e) => del(item.id, e)}>
                   <i
                     style={{ color: "red", fontsize: 20 }}
                     class="delete fa-solid fa-trash"
