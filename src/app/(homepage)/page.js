@@ -35,7 +35,6 @@ const Homepage = () => {
 
   return (
     <div>
-      <h1>items:{item.length}</h1>
       <Slider />
       <div className="myproducts">
         {productList.map((item) => {
