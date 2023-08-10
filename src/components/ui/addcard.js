@@ -66,8 +66,9 @@ const Icon = styled.div`
 
 export const Addcard = ({ props }) => {
   const dispatch = useDispatch();
-  const handleadd = (product) => {
+  const handleadd = (product, e) => {
     dispatch(add(product));
+    e.preventDefault();
   };
 
   return (
@@ -90,7 +91,7 @@ export const Addcard = ({ props }) => {
           </div>
         </div>
         <Info>
-          <button onClick={() => handleadd(props)}>
+          <button onClick={(e) => handleadd(props, e)}>
             <Icon>
               <i class="fa-solid fa-cart-shopping"></i>
             </Icon>

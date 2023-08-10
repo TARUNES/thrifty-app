@@ -19,7 +19,8 @@ margin-bottom
 `;
 
 export const Adddelcard = ({ props }) => {
-  const del = async () => {
+  const del = async (e) => {
+    e.preventDefault();
     await deleteDoc(doc(db, "products", props.id));
   };
 
@@ -33,7 +34,7 @@ export const Adddelcard = ({ props }) => {
           {/* <span class="product-catagory">Women,bag</span> */}
           <h4>
             <a href="">{props.ProductName}</a>
-            <Button onClick={del}>
+            <Button onClick={(e) => del(e)}>
               <i
                 style={{ color: "red", fontsize: 20 }}
                 class="delete fa-solid fa-trash"
