@@ -8,7 +8,7 @@ import { add } from "@/redux/cartSlice";
 
 const Info = styled.div`
   opacity: 0;
-  width: 280px
+  width: 280px;
   height: 112%;
   position: absolute;
   display: flex;
