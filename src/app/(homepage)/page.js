@@ -10,6 +10,7 @@ import "../Animation.css";
 import { useSelector } from "react-redux";
 
 const Homepage = () => {
+  console.log();
   const item = useSelector((state) => state.cart);
   const [productList, setproductList] = useState([]);
   const [loading, setLoading] = useState(true);
