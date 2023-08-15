@@ -11,6 +11,7 @@ body {
 }
 
 .product-card {
+  border-radius: 10%;
   width: 280px;
   box-shadow: 0 2px 7px #dfdfdf;
   margin: 50px;

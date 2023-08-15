@@ -7,6 +7,7 @@ import { db } from "../../../../firebase";
 import Topbar from "@/components/pageComponents/Topbar/Topbar";
 import { auth } from "../../../../firebase";
 import { Adddelcard } from "@/components/ui/addcarddel";
+import Loading from "@/components/pageComponents/Loading/Loading";
 
 const YourProduct = () => {
   const [productList, setproductList] = useState([]);
@@ -28,7 +29,7 @@ const YourProduct = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading/>;
   }
 
   return (

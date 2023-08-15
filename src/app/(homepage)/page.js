@@ -8,6 +8,8 @@ import Topbar from "@/components/pageComponents/Topbar/Topbar";
 import Slider from "./Slider";
 import "../Animation.css";
 import { useSelector } from "react-redux";
+import Loading from "@/components/pageComponents/Loading/Loading";
+
 
 const Homepage = () => {
 
@@ -31,7 +33,9 @@ const Homepage = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+     <Loading/>
+    );
   }
 
   return (

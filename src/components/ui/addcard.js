@@ -34,6 +34,7 @@ const Container = styled.div`
   backgroung-color: #f5fbfd;
   margin-top: 70px;
   position: relative;
+  
 
   &:hover ${Info} {
     opacity: 1;
