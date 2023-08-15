@@ -35,7 +35,7 @@ const Homepage = () => {
   }
 
   return (
-    <div>
+    <div className="back" >
       <Slider />
       <div className="myproducts">
         {productList.map((item) => {

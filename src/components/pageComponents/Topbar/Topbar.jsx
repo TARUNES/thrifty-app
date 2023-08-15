@@ -6,15 +6,16 @@ import logo from "./thrifty-logo.png";
 import { auth } from "../../../../firebase"
 
 export default function Topbar() {
-  const user= auth.onAuthStateChanged(()=>{
-    if(user){
-      console.log("user logged in",auth.currentUser)
-    }
-    else{
-      console.log("none")
-    }
-  })
-  console.log(user)
+  // const user= auth.onAuthStateChanged(()=>{
+  //   if(user){
+  //     console.log("user logged in",auth.currentUser)
+  //   }
+  //   else{
+  //     console.log("none")
+  //   }
+  // })
+  // console.log(user)
+  const user =false;
   return (
     <div className="top">
       <div className="topLeft">

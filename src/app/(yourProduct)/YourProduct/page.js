@@ -32,8 +32,8 @@ const YourProduct = () => {
   }
 
   return (
-    <div>
-      <h1>cards</h1>
+    <div className="back">
+      <h1>Your products</h1>
       <div className="myproducts" style={{}}>
         {productList.map((item) => {
           if (item.userId == auth.currentUser?.uid) {
