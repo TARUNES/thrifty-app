@@ -69,10 +69,10 @@ const AddProducts = () => {
           const ProductSnapShot = await getDocs(ProductCollection);
           try {
             await addDoc(ProductCollection, {
-              ProductName: ProductName,
-              ProductPrice: ProductPrice,
-              Description: Description,
-              ImageUrl: downloadURL,
+                ProductName: ProductName,
+                ProductPrice: ProductPrice,
+                Description: Description,
+                ImageUrl: downloadURL,
               userId: auth.currentUser.uid,
             });
             setProductName("");
