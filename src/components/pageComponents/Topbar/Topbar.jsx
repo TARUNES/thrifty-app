@@ -1,9 +1,11 @@
-import React from "react";
+// import React from "react";
+"use client"
 import "./Topbar.css";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "./thrifty-logo.png";
 import { auth } from "../../../../firebase"
+import React, { useEffect, useState } from "react";
 
 export default function Topbar() {
   // const user= auth.onAuthStateChanged(()=>{
@@ -15,10 +17,25 @@ export default function Topbar() {
   //   }
   // })
   // console.log(user)
-  const user =false;
+  // const userrr=auth.currentUser
+  // console.log(userrr);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      setUser(true);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  
   return (
     <div className="top">
       <div className="topLeft">
+        
         <Image
           src={logo}
           alt="Thrifty"
@@ -48,7 +65,10 @@ export default function Topbar() {
         {user ?(
            <ul className="topList">
            <li className="topListItem">
-             <Link href="/"><button onClick={auth.signOut()}>LOGOUT</button></Link>
+             <Link href="/"><button onClick={async()=>{
+              await auth.signOut()
+              setUser(null)
+              console.log("Logged Out");}}>LOGOUT</button></Link>
            </li>
            <li className="topListItem">
              <Link href="/"><i class="fa-regular fa-user"></i></Link>

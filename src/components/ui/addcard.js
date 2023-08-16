@@ -6,6 +6,9 @@ import "./addcard.css";
 import { useDispatch } from "react-redux";
 import { add } from "@/redux/cartSlice";
 
+import { db,auth } from "../../../firebase";
+import { addDoc, collection, getDocs } from "firebase/firestore";
+
 const Info = styled.div`
   opacity: 0;
   width: 280px;
@@ -67,9 +70,16 @@ const Icon = styled.div`
 
 export const Addcard = ({ props }) => {
   const dispatch = useDispatch();
-  const handleadd = (product, e) => {
+  
+  const handleadd = async(product, e) => {
     dispatch(add(product));
     e.preventDefault();
+    const ProductCollection = collection(db, "usercart");
+      const ProductSnapShot = await getDocs(ProductCollection);
+      await addDoc(ProductCollection, {
+          userId: auth.currentUser.uid,
+          
+            });
   };
 
   return (

@@ -4,11 +4,16 @@ import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../../firebase";
 import { useRouter } from "next/navigation";
+import { useToast } from "@/components/ui/use-toast"
+
+
 import "./login.css";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const { toast } = useToast()
 
   const router = useRouter();
 
@@ -19,7 +24,10 @@ const SignUp = () => {
         // Signed in
         const user = userCredential.user;
         console.log(user);
-        window.alert("Signed UP");
+        // window.alert("Signed UP");
+        toast({
+          description: "Your message has been sent.",
+        })
         router.push("/");
         // ...
       })
