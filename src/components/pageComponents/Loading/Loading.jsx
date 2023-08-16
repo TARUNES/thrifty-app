@@ -9,9 +9,9 @@ const Loading = () => {
       setTimeout(() => setFilled((prev) => (prev += 2)), 50);
     }
   }, [filled, isRunning]);
-  window.onload = function () {
-    setIsRunning(true);
-  };
+  // window.onload = function () {
+  //   setIsRunning(true);
+  // };
   return (
     <div className="App">
       <h1>Loading</h1>
