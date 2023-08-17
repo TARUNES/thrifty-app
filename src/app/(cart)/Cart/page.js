@@ -54,11 +54,13 @@ const Cart = () => {
   return (
     <div>
     
-    {(cartitems.length>0)?(<Container>
-      <div style={{display:'flex',flexWrap:'wrap',}}>
+    {(cartitems.length>0)?(
+    
+    <Container>
+      <div style={{display:'flex',flexWrap:'wrap',width:'80%'}}>
         {cartitems.map((item) => (
           <Link href={"/products/" + item.id}>
-            <div class="product-card">
+            <div class="product-cart">
               <div class="product-tumb">
                 <img src={item.ImageUrl} alt="Rendering..." />
               </div>
