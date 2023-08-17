@@ -17,28 +17,30 @@ const Homepage = () => {
   const [productList, setproductList] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const getProducts = async () => {
+  const getProducts = async () => {
 
-      const cachedProducts = localStorage.getItem("cachedProducts");
-      
-      if (cachedProducts) {
-        setproductList(JSON.parse(cachedProducts));
-        setLoading(false);
-        return;
-      }
-
-      const ProductCollection = collection(db, "products");
-      const ProductSnapshot = await getDocs(ProductCollection);
-      const prod = ProductSnapshot.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
-      setproductList(prod);
+    const cachedProducts = localStorage.getItem("cachedProducts");
+    
+    if (cachedProducts) {
+      setproductList(JSON.parse(cachedProducts));
       setLoading(false);
-      localStorage.setItem("cachedProducts", JSON.stringify(prod));
-      console.log(productList);
-    };
+      return;
+    }
+
+    const ProductCollection = collection(db, "products");
+    const ProductSnapshot = await getDocs(ProductCollection);
+    const prod = ProductSnapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }));
+    setproductList(prod);
+    setLoading(false);
+    localStorage.setItem("cachedProducts", JSON.stringify(prod));
+    console.log(productList);
+  };
+
+  useEffect(() => {
+    
     getProducts();
   }, []);
 
