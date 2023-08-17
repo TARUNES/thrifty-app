@@ -66,7 +66,7 @@ const Cart = () => {
                 {/* <span class="product-catagory">Women,bag</span> */}
                 <h4>
                   <a href="">{item.ProductName}</a>
-                  <Button onClick={(e) => del(item.id)}>
+                  <Button onClick={(e) => del(item.id,e)}>
                     <i
                       style={{ color: "red", fontsize: 20 }}
                       class="delete fa-solid fa-trash"
